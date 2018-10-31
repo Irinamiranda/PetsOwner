@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Owner's List</title>
+</head>
+<body>
+<div th:each="person : ${persons}">
+    <h2 th:text="${person.name}"></h2>
+    <ul>
+        <th:block th:each="pet: ${person.pets}">
+            <li th:inline="text"><b>[[${pet.category}]]</b>  [[${pet.name}]] [[${pet.age}]].</li>
+        </th:block>
+    </ul>
+</div>
+</body>
+</html>
